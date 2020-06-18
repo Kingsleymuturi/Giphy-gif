@@ -1,0 +1,16 @@
+<div class="container">
+  <div id="search">
+    <app-search (emitSearch) = 'searchaGif($event)'></app-search>
+  </div>
+  <div *ngIf="gifs">
+    <div class="card-columns" >
+      <div class="card" *ngFor="let gif of gifs">
+        
+                <img src="{{gif.url}}" alt="" class="card-img">
+      </div>
+    </div>
+  </div>
+  <div *ngIf='!gifs'>
+    <p>no search yet</p>
+  </div>  
+</div>
